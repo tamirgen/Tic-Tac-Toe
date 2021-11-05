@@ -9,6 +9,15 @@ class Board:
     def to_string(self):
         return '{}|{}|{}|{}\n-------\n{}|{}|{}|{}\n-------\n{}|{}|{}|{}\n'.format(*self.board)
        
+class Player:
+    """
+    Creates a player
+    """
+    def __init__(self, name, marker):
+        self.name = name
+        self.marker = marker
+       
+
 
 print(Board().to_string())
 
