@@ -46,8 +46,17 @@ class Player:
         self.name = nameKFNV
         self.marker = marker
        
+class Game:
+    """
+    Run the game and swapping turns between 2 palyers
+    """
+    def __init__(self, player1, player2)
+    self.board = Board()
+    self.player = [player1, player2]
+    self.turn = False
 
 
+    
 print(Board().to_string())
 
 
