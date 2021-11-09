@@ -43,20 +43,41 @@ class Player:
     Creates a player
     """
     def __init__(self, name, marker):
-        self.name = nameKFNV
+        self.name = name
         self.marker = marker
        
 class Game:
     """
     Run the game and swapping turns between 2 palyers
     """
-    def __init__(self, player1, player2)
-    self.board = Board()
-    self.player = [player1, player2]
-    self.turn = False
+    def __init__(self, player1, player2):
+        self.board = Board()
+        self.player = [player1, player2]
+        self.turn = False
+
+    def play(self):
+        while True:
+            current_player = self.player[int(self.turn)]
+
+            print(self.board.to_string())
+            move = int(input(f'this is the current board, {current_player.name} make a move 0-15.\n'))
+            while True:
+                """
+                This Loop is checking if there is a winner and if the palyers made a legal move
+                """
+                try:
+                    is_winner = self.make_move(current_player, move)
+                    break
+                except ValueError:
+                    move = int(input('Ilegal move, pleae try again.'))
+                if is_winner:
+                    break    
 
 
-    
-print(Board().to_string())
+            self.turn = not self.turn
+
+
+Game(Player('Tom', 'x'), Player('Regina', '0')).play()
+
 
 
