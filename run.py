@@ -5,42 +5,37 @@ class Game:
     """
     def __init__(self, player1, player2):
         self.board = Board()
-        self.player = [player1, player2]
+        self.players = [player1, player2]
         self.turn = False
 
     def play(self):
         while True:
-            current_player = self.player[int(self.turn)]
-
+            current_player = self.players[int(self.turn)]
+ 
             print(self.board.to_string())
-            move = int(input(f'this is the current board, {current_player.name} make a move 0-8.\n'))
+            move = int(input(f'this is the current board, {current_player.name}make a move 0-8.\n'))
             while True:
-                """
-                This Loop is checking if there is a winner and if the palyers made a legal move
-                """
                 try:
                     is_winner = self.board.make_move(current_player, move)
                     break
                 except (ValueError, IndexError):
-                    move = int(input('Ilegal move, pleae try again.\n'))
-                if is_winner or self.board.is_drew():
-                    break    
-
+                    move = int(input('Illegal move, please try again.\n'))
+            if is_winner or self.board.is_draw():
+                break
+ 
             self.turn = not self.turn
-            print(self.board.to_string())
-
-            if is_winner:
-                print(f'Congratulations {current_player.name}, you win!')
-
-            else:
-                print('It\'s a draw!')
+        print(self.board.to_string())
+        if is_winner:
+            print(f'Congratulations {current_player.name}, you win!')
+        else:
+            print('It\'s a draw!')
 
 class Board:
     """
-    Creates the game board
+    Creates the game board.
     """
     def __init__(self):
-        self.board = ['.'] * 9
+        self.board = [' '] * 9
    
     def to_string(self):
         return '{}|{}|{}\n-----\n{}|{}|{}\n-----\n{}|{}|{}\n'.format(*self.board)
@@ -72,19 +67,26 @@ class Board:
         return any([all([self.board[x] == marker for x in pos]) for pos in winning_positions])
 
     def is_draw(self):
-        return '.' not in self.board    
+        """
+        Check if the board is full and call for a draw.
+        """
+        return ' ' not in self.board    
 
        
 class Player:
     """
-    Creates a player
+    Creates a player and his marker.
     """
     def __init__(self, name, marker):
         self.name = name
         self.marker = marker
-       
-       
-Game(Player('Tom', 'x'), Player('Regina', 'o')).play()
+
+            
+name1 = input('Enter the first player name:\n')
+name2 = input('Enter the second player name:\n')
+            
+Game(Player(name1, 'x'), Player(name2, 'o')).play()
+
 
 
 
