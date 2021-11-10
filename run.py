@@ -23,12 +23,17 @@ class Game:
                     break
                 except (ValueError, IndexError):
                     move = int(input('Ilegal move, pleae try again.\n'))
-                if is_winner:
+                if is_winner or self.board.is_drew():
                     break    
 
             self.turn = not self.turn
             print(self.board.to_string())
-            print(f'Congratulations {current_player.name}, you win!')
+
+            if is_winner:
+                print(f'Congratulations {current_player.name}, you win!')
+
+            else:
+                print('It\'s a draw!')
 
 class Board:
     """
@@ -65,6 +70,9 @@ class Board:
             ]
 
         return any([all([self.board[x] == marker for x in pos]) for pos in winning_positions])
+
+    def is_draw(self):
+        return '.' not in self.board    
 
        
 class Player:
