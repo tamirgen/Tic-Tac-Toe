@@ -21,8 +21,8 @@ class Game:
                 try:
                     is_winner = self.board.make_move(current_player, move)
                     break
-                except ValueError:
-                    move = int(input('Ilegal move, pleae try again.'))
+                except (ValueError, IndexError):
+                    move = int(input('Ilegal move, pleae try again.\n'))
                 if is_winner:
                     break    
 
