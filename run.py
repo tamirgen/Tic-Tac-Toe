@@ -44,7 +44,7 @@ class Board:
         """
         Choose a palce and make sure that there are no mistakes
         """
-        if self.board[place] != '.':
+        if self.board[place] != ' ':
             raise ValueError(f'The place{place} is taken.')
         self.board[place] = player.marker
         return self.is_winner(player.marker)
