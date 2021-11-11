@@ -51,7 +51,8 @@ class Board:
 
     def is_winner(self, marker):
         """
-        Check winning combinations
+        Check all possible winning combinations.
+        This fuction is checikg if the full list = True and decides if there is a winner.
         """
         winning_positions = [
             [0, 1, 2],
@@ -69,6 +70,7 @@ class Board:
     def is_draw(self):
         """
         Check if the board is full and call for a draw.
+        The function simply checks if there are no more empty spaces on the board.
         """
         return ' ' not in self.board    
 
