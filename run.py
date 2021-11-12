@@ -1,34 +1,4 @@
 
-class Game:
-    """
-    Run the game and swapping turns between 2 palyers
-    """
-    def __init__(self, player1, player2):
-        self.board = Board()
-        self.players = [player1, player2]
-        self.turn = False
-
-    def play(self):
-        while True:
-            current_player = self.players[int(self.turn)]
- 
-            print(self.board.to_string())
-            move = int(input(f'this is the current board, {current_player.name}make a move 0-8.\n'))
-            while True:
-                try:
-                    is_winner = self.board.make_move(current_player, move)
-                    break
-                except (ValueError, IndexError):
-                    move = int(input('Illegal move, please try again.\n'))
-            if is_winner or self.board.is_draw():
-                break
- 
-            self.turn = not self.turn
-        print(self.board.to_string())
-        if is_winner:
-            print(f'Congratulations {current_player.name}, you win!')
-        else:
-            print('It\'s a draw!')
 
 class Board:
     """
@@ -82,6 +52,37 @@ class Player:
     def __init__(self, name, marker):
         self.name = name
         self.marker = marker
+
+class Game:
+    """
+    Run the game and swapping turns between 2 palyers
+    """
+    def __init__(self, player1, player2):
+        self.board = Board()
+        self.players = [player1, player2]
+        self.turn = False
+
+    def play(self):
+        while True:
+            current_player = self.players[int(self.turn)]
+ 
+            print(self.board.to_string())
+            move = int(input(f'this is the current board, {current_player.name}make a move 0-8.\n'))
+            while True:
+                try:
+                    is_winner = self.board.make_move(current_player, move)
+                    break
+                except (ValueError, IndexError):
+                    move = int(input('Illegal move, please try again.\n'))
+            if is_winner or self.board.is_draw():
+                break
+ 
+            self.turn = not self.turn
+        print(self.board.to_string())
+        if is_winner:
+            print(f'Congratulations {current_player.name}, you win!')
+        else:
+            print('It\'s a draw!')        
 
             
 name1 = input('Enter the first player name:\n')
