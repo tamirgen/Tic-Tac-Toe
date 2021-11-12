@@ -1,31 +1,36 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic-Tac-Toe Game
+------------------
 
-Welcome tamirgen,
+The Tic-Tac-Toe game is a Python game that run on the mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+It is a two players game and the target is complete a line, column or a diagnol before the other player.
+The game was disgn in order to develop the ablty of a player to anticipate to other player moves and to 
+prepair a strategy of winning using the minimum moves possible. 
 
-## Reminders
+<--- here need to be a live version of the game in all devices---->
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How to play
+--------------
 
-## Creating the Heroku app
+The game is based on the clasic Tick-Tac-Toe game. You can read more about the game on [wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe).
+In this version, the players are asked to enter their names and the board is printed to the terminal numbered 0-8.
+Each player is assigned a mark (x,o) and after each one places a mark on the board, using the keyboard, the turns are changing.
+The board keeps the marks of each player and the player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. The game will declare a winner with the statement: "Congratulations {name}, you win".
+If no player manages to win, a draw is announced and the game will be over.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Existing Features
+--------------------
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- The players are being asked to enter their names:
+<br>
+<--- ENTER SS OF TERMINAL ASKING THE NAMES--->
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- The board is printed to the termianl numbered 0-8.
+- An announcement will be made: "This is the current board,{name} please make a move 0-8\n')).
+<br>
+<---ENTER SS OF THE BOARD AND ANNOUNCMENT--->
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- Validation that the same number can not be entered twice:
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
