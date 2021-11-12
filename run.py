@@ -14,14 +14,15 @@ class Board:
         """
         Create the actual board as it appears on the terminal.
         """
-        return '{}|{}|{}\n-----\n{}|{}|{}\n-----\n{}|{}|{}\n'.format(*self.board)
+        return '{}|{}|{}\n-----\n{}|{}|{}\n-----\n{}|{}|{}\n'.format(
+            *self.board)
 
     def place_mark(self, marker, place):
         """
         This function is checking if the value is between 0-8.
         """
         if self.board[place] not in '012345678' or place < 0 or place > 8:
-            raise ValueError()
+            raise ValueError
         self.board[place] = marker
         return self.is_winner(marker)    
 
@@ -29,7 +30,7 @@ class Board:
         """
         This function is checking if the move is leagl or the spot is already taken.
         """
-
+        
         return self.board[i] in '012345678'
 
     def is_winner(self, marker):
@@ -80,8 +81,9 @@ class Player:
             if board.legal_move(move):
                 return move
             else:
-                move = int(input('Illegal move, please try again a number between 0-8.\n'))    
-
+                move = int(input('Illegal move, please try again.\n')) 
+           
+        
 class Game:
     """
     Run the game and swapping turns between 2 palyers
