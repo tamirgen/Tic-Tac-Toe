@@ -28,6 +28,8 @@ class Board:
         """
         This function is checking if the move is legal or the spot is already
         taken.
+        The function also checks if the value that was entered is a number 
+        between 0-8 and throw and error if not.
         """
         is_legal = True
         try:
