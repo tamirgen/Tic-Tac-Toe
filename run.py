@@ -21,17 +21,25 @@ class Board:
         """
         This function is checking if the value is between 0-8.
         """
-        if self.board[place] not in '012345678' or place < 0 or place > 8:
-            raise ValueError
         self.board[place] = marker
-        return self.is_winner(marker)    
+        return self.is_winner(marker)
 
     def legal_move(self, i):
         """
-        This function is checking if the move is leagl or the spot is already taken.
+        This function is checking if the move is legal or the spot is already
+        taken.
         """
-        
-        return self.board[i] in '012345678'
+        is_legal = True
+        try:
+            val = int(i)
+            if val < 0 or val > 8:
+                is_legal = False
+            elif self.board[val] not in '012345678':
+                is_legal = False
+        except ValueError:
+            is_legal = False
+        finally:
+            return is_legal
 
     def is_winner(self, marker):
         """
@@ -50,7 +58,8 @@ class Board:
             [2, 4, 6],
             ]
 
-        return any([sum([self.board[i] == marker for i in pos]) == 3 for pos in winning_positions])
+        return any([sum([self.board[i] == marker for i in pos]) == 3 
+        for pos in winning_positions])
 
     def is_draw(self):
         """
@@ -76,12 +85,14 @@ class Player:
         Using a while loop, the player will be asked to try again
         until he puts a correct move 0-8.
         """
-        move = int(input(f'This is the current board, {self.name} please make a move 0-8\n'))
+        move = input(
+            f'This is the current board,{self.name} please make a move 0-8\n')
+
         while True:
             if board.legal_move(move):
-                return move
+                return int(move)
             else:
-                move = int(input('Illegal move, please try again.\n')) 
+                move = input('Illegal move, please try again.\n')
            
         
 class Game:
@@ -122,7 +133,7 @@ class Game:
             print('No one wins! Better luck next time.')
         else:
             print(f'Congratulations {current_player.name}, you win')
-        print(self.board.to_string())      
+        print(self.board.to_string())    
 
 name1 = input('Enter the first player name:\n')
 name2 = input('Enter the second player name:\n')
