@@ -1,5 +1,4 @@
 
-
 class Board:
     """
     Creates the game board.
@@ -28,8 +27,8 @@ class Board:
         """
         This function is checking if the move is legal or the spot is already
         taken.
-        The function also checks if the value that was entered is a number 
-        between 0-8 and throw and error if not.
+        The function also checks if the value that was entered is a number
+        between 0-8 and throw an error if not.
         """
         is_legal = True
         try:
@@ -46,7 +45,7 @@ class Board:
     def is_winner(self, marker):
         """
         Check all possible winning combinations.
-        This fuction is checikg if the full list = True 
+        This fuction is checking if the full list = True
         and decides if there is a winner.
         """
         winning_positions = [
@@ -60,15 +59,17 @@ class Board:
             [2, 4, 6],
             ]
 
-        return any([sum([self.board[i] == marker for i in pos]) == 3 
-        for pos in winning_positions])
+        return any([sum(
+            [self.board[i] == marker for i in pos]) ==
+                3 for pos in winning_positions])
 
     def is_draw(self):
         """
         Check if the board is full and call for a draw.
         The function checks if all [i] in this range are full.
         """
-        return all(str(i) not in self.board for i in range(8)) 
+        return all(str(i) not in self.board for i in range(8))
+
 
 class Player:
     """
@@ -80,12 +81,12 @@ class Player:
         """
         self.name = name
         self.marker = marker
-    
+
     def make_move(self, board):
         """
-        This fuction is checking if the moves legal.
+        This function is checking if the moves are legal.
         Using a while loop, the player will be asked to try again
-        until he puts a correct move 0-8.
+        until he puts the correct move 0-8.
         """
         move = input(
             f'This is the current board,{self.name} please make a move 0-8\n')
@@ -95,8 +96,8 @@ class Player:
                 return int(move)
             else:
                 move = input('Illegal move, please try again.\n')
-           
-        
+
+
 class Game:
     """
     Run the game and swapping turns between 2 palyers
@@ -105,25 +106,25 @@ class Game:
         """
         This function will create a new board for a new game.
         It will set a game for 2 players.
-        It will decide who's turn is it.
+        It will decide whose turn is it.
         """
         self.board = Board()
         self.players = [player1, player2]
         self.turn = False
 
-        self.play()    
+        self.play()
 
     def play(self):
         """
         This function is the actual game.
-        The while loop will print the board. 
+        The while loop will print the board.
         It states the name of the current player and which move he can make.
-        The loop checks for winner or draw and break if find one.
-        Outside the loof an if\esle can print the right outcome.
-        """ 
+        The loop checks for a win or a draw and break if it finds one.
+        Outside the loof an 'if esle' can print the right outcome.
+        """
         while True:
             current_player = self.players[int(self.turn)]
- 
+
             print(self.board.to_string())
             move = current_player.make_move(self.board)
             is_winning = self.board.place_mark(current_player.marker, move)
@@ -135,13 +136,10 @@ class Game:
             print('No one wins! Better luck next time.')
         else:
             print(f'Congratulations {current_player.name}, you win')
-        print(self.board.to_string())    
+        print(self.board.to_string())
+
 
 name1 = input('Enter the first player name:\n')
 name2 = input('Enter the second player name:\n')
-            
+
 Game(Player(name1, 'x'), Player(name2, 'o')).play()
-
-
-
-
