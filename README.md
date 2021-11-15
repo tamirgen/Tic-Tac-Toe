@@ -3,9 +3,9 @@
 
 The Tic-Tac-Toe game is a Python game that runs on the mock terminal by Heroku.
 
-It is a two players game and the target is to complete a line, column or a diagnol before the other player.
+It is a two players game and the target is to complete a line, column or a diagonal before the other player.
 The game was design in order to develop the ability of a player to anticipate the other player moves and to 
-prepair a strategy of winning using the minimum possible moves. 
+prepare a strategy of winning using the minimum possible moves. 
 
 [Here is a link to the live version of the game](https://tic-tac-toe-tamir.herokuapp.com/)
 
@@ -35,7 +35,7 @@ If no one wins, a draw is announced and the game is over.
 ![players names](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-ask-for-names.jpg?raw=true)
 
 - The board is printed to the termianl numbered 0-8.
-- An announcement will be made: "This is the current board,{name} please make a move 0-8\n')).
+- An announcement is printed: "This is the current board,{name} please make a move 0-8\n')).
 
 <br>
 
@@ -51,7 +51,7 @@ If no one wins, a draw is announced and the game is over.
  ![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
 
 - If there is a winner, his name will be added to the winning sentence.
-- If there is a darw, the termial will print: "No one wins! Better luck next time."
+- If there is a draw, the termial will print: "No one wins! Better luck next time."
 
 <br>
 
@@ -76,12 +76,12 @@ I have used three classes for this project:
 
 - Player class is in charge of:
    * Holding the players names and markers.
-   * Getting information from a function in Board class and print the illegal move.
+   * Getting information from a function in Board class and printing the illegal move statement.
 
 - Game class is in charge of:
    * Swapping turns between players.
    * Holding the actual game.
-   * Checking and announce the winner or call for a draw.
+   * Checking and announcing the winner or calling for a draw.
 
    <br>
 
