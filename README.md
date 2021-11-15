@@ -11,6 +11,7 @@ prepair a strategy of winning using the minimum moves possible.
 
 ![Responsive Mockup](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/tic-tac-toe-AMIresponsive.jpg?raw=true)
 
+<br>
 
 ## How to play
 --------------
@@ -20,6 +21,8 @@ In this version, the players are asked to enter their names and the board is pri
 Each player is assigned a mark (x,o) and after each one places a mark on the board, using the keyboard, the turns are changing.
 The board keeps the marks of each player and the player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. The game will declare a winner with the statement: "Congratulations {name}, you win".
 If no player manages to win, a draw is announced and the game will be over.
+
+<br>
 
 ## Existing Features
 --------------------
@@ -62,7 +65,7 @@ If no player manages to win, a draw is announced and the game will be over.
 
 <br>
 
-### Data Model
+## Data Model
 --------------
 
 I have used three classes for this project:
@@ -82,7 +85,7 @@ I have used three classes for this project:
 
    <br>
 
-### Testing
+## Testing
 -----------
 
 I have manualy tested my project by doing the following:
@@ -93,14 +96,14 @@ I have manualy tested my project by doing the following:
 
 <br>
 
-### Bugs
+## Bugs
 --------
 
 There were no bugs to fix.
 
 <br>
 
-### Deployment
+## Deployment
 --------------
 
 The project was deployed using the Code Institute's mock terminal from Heroku.
@@ -113,9 +116,8 @@ Steps:
 
 <br>
 
-### Credit
+## Credit
 ----------
-
 - Code Institue for the deployment terminal.
 - Wikipedia for the details on Tic-Tac-Toe
 
