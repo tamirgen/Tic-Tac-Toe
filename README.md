@@ -1,11 +1,11 @@
 # Tic-Tac-Toe Game
 ------------------
 
-The Tic-Tac-Toe game is a Python game that run on the mock terminal on Heroku.
+The Tic-Tac-Toe game is a Python game that runs on the mock terminal by Heroku.
 
-It is a two players game and the target is complete a line, column or a diagnol before the other player.
-The game was disgn in order to develop the ablty of a player to anticipate to other player moves and to 
-prepair a strategy of winning using the minimum moves possible. 
+It is a two players game and the target is to complete a line, column or a diagnol before the other player.
+The game was design in order to develop the ability of a player to anticipate the other player moves and to 
+prepair a strategy of winning using the minimum possible moves. 
 
 [Here is a link to the live version of the game](https://tic-tac-toe-tamir.herokuapp.com/)
 
@@ -16,18 +16,18 @@ prepair a strategy of winning using the minimum moves possible.
 ## How to play
 --------------
 
-The game is based on the clasic Tick-Tac-Toe game. You can read more about the game on [wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe).
-In this version, the players are asked to enter their names and the board is printed to the terminal numbered 0-8.
+The game is based on the clasic Tick-Tac-Toe game. You can read more about the game on [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe).
+In this version, the players are asked to enter their names, and the board is printed to the terminal numbered 0-8.
 Each player is assigned a mark (x,o) and after each one places a mark on the board, using the keyboard, the turns are changing.
 The board keeps the marks of each player and the player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. The game will declare a winner with the statement: "Congratulations {name}, you win".
-If no player manages to win, a draw is announced and the game will be over.
+If no one wins, a draw is announced and the game is over.
 
 <br>
 
 ## Existing Features
 --------------------
 
-- This a two players game.
+- This is a two players game.
 - The players are being asked to enter their names.
 
 <br>
@@ -50,7 +50,7 @@ If no player manages to win, a draw is announced and the game will be over.
 
  ![validation check](https://github.com/tamirgen/Tic-Tac-Toe/blob/main/assests/images/ttt-illegal-moves.jpg?raw=true)
 
-- If there is a winner, his name will be added to the winning sentance.
+- If there is a winner, his name will be added to the winning sentence.
 - If there is a darw, the termial will print: "No one wins! Better luck next time."
 
 <br>
@@ -80,8 +80,8 @@ I have used three classes for this project:
 
 - Game class is in charge of:
    * Swapping turns between players.
-   * Hold the actual game.
-   * Check and announce the winner or call for a draw.
+   * Holding the actual game.
+   * Checking and announce the winner or call for a draw.
 
    <br>
 
@@ -90,7 +90,7 @@ I have used three classes for this project:
 
 I have manualy tested my project by doing the following:
 - Passed the code through PEP8 and made sure it is error free.
-- Given invalid inputs: number that are not 0-8, letters instead of numbers and the same number twice.
+- Given invalid inputs: numbers that are not 0-8, letters instead of numbers and the same number twice.
 - Tested in my local terminal and the Heroku terminal.
 - Tested on an Android tablet and IOS smartphone.
 
@@ -109,8 +109,8 @@ There were no bugs to fix.
 The project was deployed using the Code Institute's mock terminal from Heroku.
 Steps:
   * Create new app on Heroku.
-  * Add a key: PORT and value:8000 to the Config Vars.
-  * Set the buildback to "Python" and "NodeJS" in this order.
+  * Add a key: PORT and value: 8000 to the Config Vars.
+  * Set the buildback to "Python" and "NodeJS" in that order.
   * Link the Heroku app to the project repository.
   * Click on <b>Deploy<b>
 
