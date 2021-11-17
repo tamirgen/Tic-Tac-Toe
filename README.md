@@ -107,7 +107,8 @@ There were no bugs to fix.
 --------------
 
 The project was deployed using the Code Institute's mock terminal from Heroku.
-Steps:
+The steps to deploy:
+  * Fork or clone this repository.
   * Create new app on Heroku.
   * Add a key: PORT and value: 8000 to the Config Vars.
   * Set the buildback to "Python" and "NodeJS" in that order.
